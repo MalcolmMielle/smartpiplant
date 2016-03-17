@@ -18,6 +18,8 @@ class Plant(object):
 		self.flag = True
 		self.mean_plant = MeanFilter()
 
+	def getWater(self):
+		return self.mean_plant.getMean()
 		
 	def update(self, water_value):
 		self.water = water_value

@@ -33,11 +33,12 @@ def statusOfPlant(bot, update):
 	#str = update.message.chat_id;
 	#bot.sendMessage(chat_id=update.message.chat_id, text=str)
 	bot.sendMessage(chat_id=update.message.chat_id, text="Plant 1 has that much water :")
-	bot.sendMessage(chat_id=update.message.chat_id, text=plant1.water)
+	bot.sendMessage(chat_id=update.message.chat_id, text=plant1.getWater())
 	bot.sendMessage(chat_id=update.message.chat_id, text="Plant 2 has that much water :")
-	bot.sendMessage(chat_id=update.message.chat_id, text=plant2.water)
+	bot.sendMessage(chat_id=update.message.chat_id, text=plant2.getWater())
 	
 def register(bot, update):
+	bot.sendMessage(chat_id=update.message.chat_id, text="Thanks for registering :)")
 	list_chat.append(update.message.chat_id);
 
 def update(bot):
