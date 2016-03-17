@@ -12,7 +12,6 @@ class MeanFilter(object):
 		self.values = list()
 		#Using the last two minutes measurements
 		self.max = 120
-	def getMean(self):
 		
 	def addValue(self, val):
 		if(len(self.values) > self.max):
