@@ -9,19 +9,22 @@ Documentation, License etc.
 
 import serial
 import re
-
+from MeanFilter import *
 
 class Plant(object):
 	def __init__ (self):
 		self.water = 0
 		self.min_water = 50
 		self.flag = True
+		self.mean_plant = MeanFilter()
+
 		
 	def update(self, water_value):
 		self.water = water_value
+		self.mean_plant.addValue(water_value)
 		
 	def is_thirsty(self):
-		if(self.water < self.min_water):
+		if(self.mean_plant.getMean() < self.min_water):
 			return True
 		else:
 			return False
