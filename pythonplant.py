@@ -14,7 +14,7 @@ from MeanFilter import *
 class Plant(object):
 	def __init__ (self):
 		self.water = 0
-		self.min_water = 50
+		self.min_water = 300
 		self.flag = True
 		self.mean_plant = MeanFilter()
 

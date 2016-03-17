@@ -29,4 +29,7 @@ class MeanFilter(object):
 		#print("lenght")
 		#print(len(self.values))
 		#print(elem)
-		return sum / len(self.values)
+		if(len(self.values > 0)	):
+			return sum / len(self.values)
+		else:
+			return 0

@@ -21,6 +21,7 @@ logger = logging.getLogger(__name__)
 
 plant1 = Plant()
 plant2 = Plant()
+plant2.min_water = 350
 
 ser = serial.Serial('/dev/ttyUSB0', 9600)
 ser.timeout = None
@@ -49,7 +50,7 @@ def update(bot):
 			plant1.flag = False
 			for chat in list_chat:
 				bot.sendMessage(chat_id=chat, text="Plant 1 need water :(")
-	else:
+	elif (plant1.water > plant1.min_water):
 		if(plant1.flag == False):
 			plant1.flag = True
 			for chat in list_chat:
@@ -59,7 +60,7 @@ def update(bot):
 			plant2.flag = False
 			for chat in list_chat:
 				bot.sendMessage(chat_id=chat, text="Plant 2 need water :(")
-	else:
+	elif(plant2.water > plant2.min_water):
 		if(plant2.flag == False):
 			plant2.flag = True
 			for chat in list_chat:
