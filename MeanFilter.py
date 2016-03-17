@@ -14,7 +14,7 @@ class MeanFilter(object):
 		self.max = 120
 		
 	def addValue(self, val):
-		if(len(self.values) > self.max):
+		if(len(self.values) +1 > self.max):
 			self.values.pop(0)
 		self.values.append(val)
 		
@@ -22,4 +22,6 @@ class MeanFilter(object):
 		sum = 0
 		for elem in self.values:
 			sum = sum + elem
+		print("lenght")
+		print(len(self.values))
 		return elem / len(self.values)
